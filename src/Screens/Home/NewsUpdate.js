@@ -168,16 +168,26 @@ export default function HomeScreen({ navigation }) {
           onPress={() => navigation.navigate('Explore')}
         >
           <Ionicons name="compass" size={22} color="#777" />
-          <Text style={styles.navText}>Explore</Text>
+          <Text style={[styles.navText, { color: '#777' }]}>Explore</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem}>
           <Ionicons name="notifications" size={22} color="#777" />
           <Text style={styles.navText}>Notifications</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}  
-          onPress={() => navigation.openDrawer()}>
+        <TouchableOpacity
+          style={styles.navItem}
+          onPress={() => navigation.openDrawer()}
+        >
           <Ionicons name="person" size={22} color="#777" />
           <Text style={styles.navText}>Profile</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.navItem}
+          onPress={() => navigation.navigate('Location')}
+        >
+          <Ionicons name="location-sharp" size={22} color="#777" />
+          <Text style={styles.navText}>location</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -275,8 +285,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     borderTopWidth: 1,
     borderTopColor: '#eee',
-    paddingVertical: 8,
-    paddingBottom: 40,
+    paddingVertical: 30,
+    paddingBottom: 50,
   },
   navItem: { alignItems: 'center' },
   navText: { fontSize: 12, color: '#777' },

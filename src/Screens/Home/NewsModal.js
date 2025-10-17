@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.4)',
-    paddingTop: 300,
+    paddingTop: 200,
     alignItems: 'center',
   },
   modalContent: {
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
     padding: 20,
-    paddingBottom: 80,
+    paddingBottom: 150,
     width: '100%',
     alignItems: 'center',
     shadowColor: '#000',

@@ -76,7 +76,7 @@ export default function FinalDetailsScreen({ navigation }) {
 
       <TouchableOpacity
         style={styles.completeBtn}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('HomeDrawer')}
       >
         <Text style={styles.completeText}>Complete Profile</Text>
       </TouchableOpacity>

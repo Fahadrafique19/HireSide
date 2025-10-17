@@ -36,16 +36,14 @@ export default function OnboardingScreen({ navigation }) {
       <Text style={styles.heading}>
         Find the job that
         <View style={styles.pic}>
-        <Image
-          source={require('../../assets/images/you.png')}
-          style={styles.highlight}
-          resizeMode="contain"
-        />
+          <Image
+            source={require('../../assets/images/you.png')}
+            style={styles.highlight}
+            resizeMode="contain"
+          />
 
-        <Text style={styles.headings}> Deserve!</Text>
+          <Text style={styles.headings}> Deserve!</Text>
         </View>
-        
-       
       </Text>
 
       <Text style={styles.subtitle}>
@@ -53,26 +51,25 @@ export default function OnboardingScreen({ navigation }) {
         with top companies.
       </Text>
 
-     <TouchableOpacity
-  style={styles.button}
-  onPress={() => navigation.navigate('OnBordingtwo')}
-  activeOpacity={0.8}
->
-  <Text style={styles.buttonText}>Get Started</Text>
-  <FontAwesome
-    style={styles.icon}
-    name="arrow-circle-right"
-    color="#000"
-    size={54}
-  />
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('OnBordingtwo')}
+        activeOpacity={0.8}
+      >
+        <Text style={styles.buttonText}>Get Started</Text>
+        <FontAwesome
+          style={styles.icon}
+          name="arrow-circle-right"
+          color="#000"
+          size={54}
+        />
 
-   <Image
+        <Image
           source={require('../../assets/images/arrow-icons.png')}
-         style={styles.icon}
+          style={styles.icon}
           resizeMode="contain"
         />
-</TouchableOpacity>
-
+      </TouchableOpacity>
     </ImageBackground>
   );
 }
@@ -80,14 +77,14 @@ export default function OnboardingScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-   
+
     justifyContent: 'center',
   },
   logo: {
     width: 200,
     height: 150,
     marginTop: 0,
-    alignSelf:"center",
+    alignSelf: 'center',
   },
   pathContainer: {
     width: '100%',
@@ -110,7 +107,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
 
-
   headings: {
     marginTop: 0,
     fontSize: 38,
@@ -120,15 +116,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 0,
   },
 
-  pic:{
- flexDirection:"row",
-
+  pic: {
+    flexDirection: 'row',
   },
 
-  highlight: {
-    
-    
-  },
+  highlight: {},
   subtitle: {
     marginTop: 18,
     fontSize: 19,
@@ -137,33 +129,31 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-  marginTop: 50,
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center', 
-  backgroundColor: '#fff',
-  borderRadius: 30,
-  paddingVertical: 20,
-  paddingHorizontal: 25,
-  alignSelf: 'center', 
-  borderWidth: 1,
-  borderColor: '#ccc',
-  width: '90%', 
-  position: 'relative',
-},
+    marginTop: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 30,
+    paddingVertical: 20,
+    paddingHorizontal: 25,
+    alignSelf: 'center',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    width: '90%',
+    position: 'relative',
+  },
 
-buttonText: {
-  fontSize: 16,
-  fontWeight: '600',
-  color: '#000',
-  textAlign: 'center',
-  flex: 1, 
-},
+  buttonText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#000',
+    textAlign: 'center',
+    flex: 1,
+  },
 
-icon: {
-  position: 'absolute',
-  right: 10, 
-
-}
-
+  icon: {
+    position: 'absolute',
+    right: 10,
+  },
 });

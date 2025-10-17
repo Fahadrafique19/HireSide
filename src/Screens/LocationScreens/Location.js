@@ -19,7 +19,7 @@ const ApplicationSuccessScreen = ({ navigation }) => {
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.8}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('NearbyJobsScreen')}
       >
         <Text style={styles.buttonText}>Turn on Location</Text>
       </TouchableOpacity>
