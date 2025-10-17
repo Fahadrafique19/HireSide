@@ -28,6 +28,10 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
+      # ✅ Important line to fix "Permission denied"
+      - name: Give Gradlew Permission
+        run: chmod +x android/gradlew
+
       - name: Decode keystore
         run: |
           echo "$KEYSTORE_BASE64" | base64 --decode > android/app/my-release-key.keystore
