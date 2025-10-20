@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -10,7 +10,6 @@ import {
   Dimensions,
   FlatList,
   Modal,
-  Animated,
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -663,241 +662,97 @@ export default function CompanyScreen({ navigation }) {
     }
   };
 
-  const scrollY = useRef(new Animated.Value(0)).current;
 
-  const headerHeight = scrollY.interpolate({
-    inputRange: [0, 150],
-    outputRange: [180, 80],
-    extrapolate: 'clamp',
-  });
-
-  const titleOpacity = scrollY.interpolate({
-    inputRange: [0, 100],
-    outputRange: [0, 1],
-    extrapolate: 'clamp',
-  });
 
   return (
-    <>
-      
-      <Animated.View style={[styles.header, { height: headerHeight }]}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back" size={28} color="#ADB5BD" />
-        </TouchableOpacity>
-
-        <Animated.View
-          style={[styles.headerTitleContainer, { opacity: titleOpacity }]}
+    <ScrollView
+      contentContainerStyle={{ paddingTop: 10, paddingHorizontal: 0 }}
+      showsVerticalScrollIndicator={false}
+    >
+      <ImageBackground source={cover} style={styles.cover} resizeMode="cover">
+        <TouchableOpacity
+          style={styles.backButton}
+          activeOpacity={0.7}
+          onPress={() => navigation.goBack()}
         >
-          <Text style={styles.headerSub}>HireSide - Karachi, Sindh</Text>
-        </Animated.View>
-      </Animated.View>
+          <Ionicons name="arrow-back-sharp" color="#fff" size={24} />
+        </TouchableOpacity>
+      </ImageBackground>
 
-    
-      <Animated.ScrollView
-        contentContainerStyle={{ paddingTop: 200, paddingHorizontal: 20 }}
-        onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-          { useNativeDriver: false },
-        )}
-        scrollEventThrottle={16}
-        showsVerticalScrollIndicator={false}
-      >
-       
-        <ImageBackground source={cover} style={styles.cover} resizeMode="cover">
-          <TouchableOpacity
-            style={styles.backButton}
-            activeOpacity={0.7}
-            onPress={() => navigation.goBack()}
+      <View style={styles.companyRow}>
+        <Image source={logo} style={styles.logo} />
+        <View style={{ flex: 1, marginLeft: 12 }}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: 10,
+            }}
           >
-            <Ionicons name="arrow-back-sharp" color="#fff" size={24} />
-          </TouchableOpacity>
-        </ImageBackground>
+            <Text style={styles.companyName}>HireSide</Text>
+            <Icon
+              name="checkmark-circle"
+              size={16}
+              color="#8F51F3"
+              style={{ marginLeft: 6 }}
+            />
+          </View>
+          <Text style={styles.companySub}>Software Development Company</Text>
+          <Text style={styles.companySmall}>
+            Karachi, Sindh Pakistan • www.hireside.com
+          </Text>
 
-        <View style={styles.companyRow}>
-          <Image source={logo} style={styles.logo} />
-          <View style={{ flex: 1, marginLeft: 12 }}>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginTop: 10,
-              }}
-            >
-              <Text style={styles.companyName}>HireSide</Text>
-              <Icon
-                name="checkmark-circle"
-                size={16}
-                color="#8F51F3"
-                style={{ marginLeft: 6 }}
-              />
+          <View style={styles.statsRow}>
+            <View style={styles.statItem}>
+              <Text style={styles.statNum}>13+</Text>
+              <Text style={styles.statLabel}>Open Jobs</Text>
             </View>
-            <Text style={styles.companySub}>Software Development Company</Text>
-            <Text style={styles.companySmall}>
-              Karachi, Sindh Pakistan • www.hireside.com
-            </Text>
-
-            <View style={styles.statsRow}>
-              <View style={styles.statItem}>
-                <Text style={styles.statNum}>13+</Text>
-                <Text style={styles.statLabel}>Open Jobs</Text>
-              </View>
-              <View style={styles.statItem}>
-                <Text style={styles.statNum}>2.7k</Text>
-                <Text style={styles.statLabel}>Followers</Text>
-              </View>
-              <View style={styles.statItem}>
-                <Text style={styles.statNum}>4.5+</Text>
-                <Text style={styles.statLabel}>Ratings</Text>
-              </View>
+            <View style={styles.statItem}>
+              <Text style={styles.statNum}>2.7k</Text>
+              <Text style={styles.statLabel}>Followers</Text>
+            </View>
+            <View style={styles.statItem}>
+              <Text style={styles.statNum}>4.5+</Text>
+              <Text style={styles.statLabel}>Ratings</Text>
             </View>
           </View>
-
-          <TouchableOpacity style={styles.followBtn} activeOpacity={0.8}>
-            <View style={styles.btnRow}>
-              <Fontisto name="plus-a" color="#fff" size={24} />
-              <Text style={styles.followText}> Follow</Text>
-            </View>
-          </TouchableOpacity>
         </View>
 
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.tabsBar}
-        >
-          {TABS.map(t => (
-            <TouchableOpacity
-              key={t}
-              onPress={() => setActiveTab(t)}
-              style={styles.tabTouchable}
+        <TouchableOpacity style={styles.followBtn} activeOpacity={0.8}>
+          <View style={styles.btnRow}>
+            <Fontisto name="plus-a" color="#fff" size={24} />
+            <Text style={styles.followText}> Follow</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.tabsBar}
+      >
+        {TABS.map(t => (
+          <TouchableOpacity
+            key={t}
+            onPress={() => setActiveTab(t)}
+            style={styles.tabTouchable}
+          >
+            <Text
+              style={[
+                styles.tabText,
+                activeTab === t ? styles.tabTextActive : null,
+              ]}
             >
-              <Text
-                style={[
-                  styles.tabText,
-                  activeTab === t ? styles.tabTextActive : null,
-                ]}
-              >
-                {t}
-              </Text>
-              {activeTab === t && <View style={styles.tabIndicator} />}
-            </TouchableOpacity>
-          ))}
-        </ScrollView>
+              {t}
+            </Text>
+            {activeTab === t && <View style={styles.tabIndicator} />}
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
 
-        {renderTabContent()}
-      </Animated.ScrollView>
-    </>
+      {renderTabContent()}
+    </ScrollView>
   );
-
-  // const scrollY = useRef(new Animated.Value(0)).current;
-
-  // const headerHeight = scrollY.interpolate({
-  //   inputRange: [0, 100],
-  //   outputRange: [100, 100],
-  //   extrapolate: 'clamp',
-  // });
-
-  // const titleOpacity = scrollY.interpolate({
-  //   inputRange: [0, 80],
-  //   outputRange: [0, 1],
-  //   extrapolate: 'clamp',
-  // });
-
-  // return (
-
-  //   <Animated.ScrollView
-  //     contentContainerStyle={{ paddingTop: 110, paddingHorizontal: 20 }}
-  //     onScroll={Animated.event(
-  //       [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-  //       { useNativeDriver: false },
-  //     )}
-  //     showsVerticalScrollIndicator={false}
-  //   >
-
-  //     <ImageBackground source={cover} style={styles.cover} resizeMode="cover">
-  //       <TouchableOpacity
-  //         style={styles.backButton}
-  //         activeOpacity={0.7}
-  //         onPress={() => navigation.goBack()}
-  //       >
-  //         <Ionicons name="arrow-back-sharp" color="#fff" size={24} />
-  //       </TouchableOpacity>
-  //     </ImageBackground>
-
-  //     <View style={styles.companyRow}>
-  //       <Image source={logo} style={styles.logo} />
-  //       <View style={{ flex: 1, marginLeft: 12 }}>
-  //         <View
-  //           style={{
-  //             flexDirection: 'row',
-  //             alignItems: 'center',
-  //             marginTop: 10,
-  //           }}
-  //         >
-  //           <Text style={styles.companyName}>HireSide</Text>
-  //           <Icon
-  //             name="checkmark-circle"
-  //             size={16}
-  //             color="#8F51F3"
-  //             style={{ marginLeft: 6 }}
-  //           />
-  //         </View>
-  //         <Text style={styles.companySub}>Software Development Company</Text>
-  //         <Text style={styles.companySmall}>
-  //           Karachi, Sindh Pakistan • www.hireside.com
-  //         </Text>
-
-  //         <View style={styles.statsRow}>
-  //           <View style={styles.statItem}>
-  //             <Text style={styles.statNum}>13+</Text>
-  //             <Text style={styles.statLabel}>Open Jobs</Text>
-  //           </View>
-  //           <View style={styles.statItem}>
-  //             <Text style={styles.statNum}>2.7k</Text>
-  //             <Text style={styles.statLabel}>Followers</Text>
-  //           </View>
-  //           <View style={styles.statItem}>
-  //             <Text style={styles.statNum}>4.5+</Text>
-  //             <Text style={styles.statLabel}>Ratings</Text>
-  //           </View>
-  //         </View>
-  //       </View>
-
-  //       <TouchableOpacity style={styles.followBtn} activeOpacity={0.8}>
-  //         <View style={styles.btnRow}>
-  //           <Fontisto name="plus-a" color="#fff" size={24} />
-  //           <Text style={styles.followText}> Follow</Text>
-  //         </View>
-  //       </TouchableOpacity>
-  //     </View>
-
-  //     <ScrollView
-  //       horizontal
-  //       showsHorizontalScrollIndicator={false}
-  //       contentContainerStyle={styles.tabsBar}
-  //     >
-  //       {TABS.map(t => (
-  //         <TouchableOpacity
-  //           key={t}
-  //           onPress={() => setActiveTab(t)}
-  //           style={styles.tabTouchable}
-  //         >
-  //           <Text
-  //             style={[
-  //               styles.tabText,
-  //               activeTab === t ? styles.tabTextActive : null,
-  //             ]}
-  //           >
-  //             {t}
-  //           </Text>
-  //           {activeTab === t && <View style={styles.tabIndicator} />}
-  //         </TouchableOpacity>
-  //       ))}
-  //     </ScrollView>
-
-  //     {renderTabContent()}
-  //   </Animated.ScrollView>
-  // );
 }
 
 const styles = StyleSheet.create({
@@ -911,18 +766,18 @@ const styles = StyleSheet.create({
     borderRadius: 18,
   },
 
-  header: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 10,
-    backgroundColor: '#fff',
-    justifyContent: 'flex-end',
-    paddingHorizontal: 20,
-    paddingBottom: 10,
-    elevation: 5,
-  },
+  // header: {
+  //   position: 'absolute',
+  //   top: 0,
+  //   left: 0,
+  //   right: 0,
+  //   zIndex: 10,
+  //   backgroundColor: '#fff',
+  //   justifyContent: 'flex-end',
+  //   paddingHorizontal: 20,
+  //   paddingBottom: 10,
+  //   elevation: 5,
+  // },
 
   companyRow: {
     flexDirection: 'column',

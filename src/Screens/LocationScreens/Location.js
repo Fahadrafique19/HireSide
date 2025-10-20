@@ -27,7 +27,7 @@ const ApplicationSuccessScreen = ({ navigation }) => {
       <TouchableOpacity
         style={styles.button2}
         activeOpacity={0.8}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('HomeDrawer')}
       >
         <Text style={styles.buttonText2}>Continue to App</Text>
       </TouchableOpacity>

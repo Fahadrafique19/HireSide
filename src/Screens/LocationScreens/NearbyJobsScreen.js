@@ -36,7 +36,7 @@ export default function NearbyJobsScreen() {
       city: 'Karachi, Sindh',
       time: '2 months ago',
       logo: require('../../assets/images/Figma.png'),
-      coordinates: { latitude: 24.851, longitude: 67.0 },
+      coordinates: { latitude: 24.851, longitude: 67.00 },
     },
     {
       id: 2,
@@ -132,7 +132,7 @@ export default function NearbyJobsScreen() {
           data={jobs}
           scrollAnimationDuration={800}
           renderItem={({ item }) => renderCard({ item })}
-          style={{ alignSelf: 'center' }}
+          style={{ alignSelf: '' }}
         />
       </View>
     </View>
@@ -165,6 +165,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     padding: 20,
     elevation: 6,
+    margin:10,
   },
   title: { fontSize: 16, fontWeight: 'bold', color: '#000', marginBottom: 6 },
   tagsRow: { flexDirection: 'row', flexWrap: 'wrap', marginBottom: 8 },
