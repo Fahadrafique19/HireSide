@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   pathContainer: {
     width: '100%',
-    height: 320,
+    height: 250,
     marginTop: 0,
     justifyContent: 'center',
     alignItems: 'center',
@@ -96,11 +96,11 @@ const styles = StyleSheet.create({
   path: {
     position: 'absolute',
     width: '100%',
-    height: 450,
+    height: 350,
   },
   heading: {
-    marginTop: 0,
-    fontSize: 38,
+    marginTop: 10,
+    fontSize: 30,
     fontWeight: 'bold',
     color: '#fff',
     alignItems: 'center',

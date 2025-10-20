@@ -14,8 +14,10 @@ const DrawerContent = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-
-        <TouchableOpacity style={styles.back} onPress={() => navigation.goBack()}>
+        <TouchableOpacity
+          style={styles.back}
+          onPress={() => navigation.goBack()}
+        >
           <Ionicons name="chevron-back-outline" color="#5C677D" size={34} />
         </TouchableOpacity>
 
@@ -37,34 +39,54 @@ const DrawerContent = ({ navigation }) => {
         <View style={styles.progressWrapper}>
           <Text style={styles.progressLabel}>Profile Completion</Text>
           <View style={styles.progresspercent}>
-          <View style={styles.progressBar}>
-            <View style={styles.progressFill} />
-            
-          </View>
+            <View style={styles.progressBar}>
+              <View style={styles.progressFill} />
+            </View>
 
-          <Text style={styles.percent}>75%</Text>
-
+            <Text style={styles.percent}>75%</Text>
           </View>
         </View>
 
-        
         <View style={styles.menuSection}>
-          {menuItem('person-outline', 'Personal Information', () => navigation.navigate('YourProfileScreen'))}
-          {menuItem('document-text-outline', 'My Resume', () => navigation.navigate('MyResumeScreen'))}
-          {menuItem('briefcase-outline', 'My Jobs', () => navigation.navigate('MyJobsScreen'))}
-          {menuItem('bookmark-outline', 'Saved', () => navigation.navigate('SavedJobsScreen'))}
-          {menuItem('settings-outline', 'Account Setting', () => navigation.navigate('AccountSettingScreen'))}
+          {menuItem('person-outline', 'Personal Information', () =>
+            navigation.navigate('YourProfileScreen'),
+          )}
+          {menuItem('document-text-outline', 'My Resume', () =>
+            navigation.navigate('MyResumeScreen'),
+          )}
+          {menuItem('briefcase-outline', 'My Jobs', () =>
+            navigation.navigate('MyJobsScreen'),
+          )}
+          {menuItem('bookmark-outline', 'Saved', () =>
+            navigation.navigate('SavedJobsScreen'),
+          )}
+          {menuItem('settings-outline', 'Account Setting', () =>
+            navigation.navigate('AccountSettingScreen'),
+          )}
 
           <View style={styles.divider} />
 
-          {menuItem('shield-checkmark-outline', 'Privacy Policy', () => navigation.navigate('PrivacyPolicyScreen'))}
-          {menuItem('information-circle-outline', 'About HireSide', () => navigation.navigate('AboutScreen'))}
-          {menuItem('people-outline', 'Invite Friends', () => navigation.navigate('InviteFriendsScreen'))}
-          {menuItem('chatbubble-ellipses-outline', 'Give Feedback', () => navigation.navigate('FeedbackScreen'))}
-          {menuItem('cloud-download-outline', 'Check for Update', () => navigation.navigate('UpdateScreen'))}
+          {menuItem('shield-checkmark-outline', 'Privacy Policy', () =>
+            navigation.navigate('PrivacyPolicyScreen'),
+          )}
+          {menuItem('information-circle-outline', 'About HireSide', () =>
+            navigation.navigate('AboutScreen'),
+          )}
+          {menuItem('people-outline', 'Invite Friends', () =>
+            navigation.navigate('InviteFriendsScreen'),
+          )}
+          {menuItem('chatbubble-ellipses-outline', 'Give Feedback', () =>
+            navigation.navigate('FeedbackScreen'),
+          )}
+          {menuItem('cloud-download-outline', 'Check for Update', () =>
+            navigation.navigate('UpdateScreen'),
+          )}
         </View>
 
-        <TouchableOpacity style={styles.logoutRow} onPress={() => navigation.navigate('SignIn')}>
+        <TouchableOpacity
+          style={styles.logoutRow}
+          onPress={() => navigation.navigate('SignIn')}
+        >
           <Icon name="log-out-outline" size={18} color="#E64646" />
           <Text style={styles.logoutText}>Logout</Text>
         </TouchableOpacity>
@@ -72,7 +94,6 @@ const DrawerContent = ({ navigation }) => {
     </View>
   );
 };
-
 
 const menuItem = (icon, label, onPress) => (
   <TouchableOpacity style={styles.menuItem} onPress={onPress} key={label}>
@@ -90,11 +111,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 
-  back:{
+  back: {
     marginHorizontal: 16,
-     marginTop: 30,
-
-
+    marginTop: 30,
   },
 
   profileCard: {
@@ -122,14 +141,14 @@ const styles = StyleSheet.create({
 
   progressWrapper: { marginHorizontal: 16, marginTop: 12 },
   progressLabel: { color: '#222', fontSize: 12, marginBottom: 6 },
-  progresspercent:{},
+  progresspercent: {},
   progressBar: {
     height: 7,
     backgroundColor: '#E4E7EB',
     borderRadius: 4,
     overflow: 'hidden',
-    flexDirection:"row",
-    width:"90%",
+    flexDirection: 'row',
+    width: '90%',
   },
   progressFill: { width: '75%', height: '100%', backgroundColor: '#0C64AE' },
   percent: {

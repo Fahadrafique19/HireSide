@@ -27,7 +27,7 @@ const Drawer = createDrawerNavigator();
 export default function DrawerNavigator() {
   return (
     <Drawer.Navigator
-      drawerContent={(props) => <DrawerContent {...props} />}
+      drawerContent={props => <DrawerContent {...props} />}
       screenOptions={{
         headerShown: false,
         drawerType: 'slide',
@@ -35,27 +35,26 @@ export default function DrawerNavigator() {
       }}
     >
       <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Explore" component={ExploreScreen} />
-        <Drawer.Screen name="ProfileMenuScreen" component={ProfileMenuScreen} />
-         <Drawer.Screen name="NewsUpdate" component={NewsModal} />
-              <Drawer.Screen name="NewsUpdateScreen" component={NewsUpdateScreen} />
+      <Drawer.Screen name="Explore" component={ExploreScreen} />
+      <Drawer.Screen name="ProfileMenuScreen" component={ProfileMenuScreen} />
+      <Drawer.Screen name="NewsUpdate" component={NewsModal} />
+      <Drawer.Screen name="NewsUpdateScreen" component={NewsUpdateScreen} />
 
-              <Drawer.Screen name="JobTpye" component={JobTypeScreen} />
-                    <Drawer.Screen name="Experience" component={ExperienceScreen} />
-                    <Drawer.Screen name="WorkModel" component={WorkModelScreen} />
-                    <Drawer.Screen name="JobTitle" component={JobTitleScreen} />
-                    <Drawer.Screen name="JobTitleDropDown" component={JobTitleDropDown} />
-                    <Drawer.Screen name="FinalStep" component={FinalStepScreen} />
-                    {/* <Drawer.Screen name="NewsUpdate" component={NewsModal} /> */}
-                          {/* <Drawer.Screen name="NewsUpdateScreen" component={NewsUpdateScreen} /> */}
-                          <Drawer.Screen name="BottomSheetModal" component={BottomSheetModal} />
-                          <Drawer.Screen name="ReportModal" component={ReportModal} />
-                          <Drawer.Screen name="JobCard" component={JobCard} />
-                                <Drawer.Screen name="FilterModal" component={FilterModal} />
-                                <Drawer.Screen name="Company" component={Company} />
-                                <Drawer.Screen name="CompanyFilterModal" component={CompanyFilterModal} />
-                                <Drawer.Screen name="CompanyScreen" component={CompanyScreen} />
-
+      <Drawer.Screen name="JobTpye" component={JobTypeScreen} />
+      <Drawer.Screen name="Experience" component={ExperienceScreen} />
+      <Drawer.Screen name="WorkModel" component={WorkModelScreen} />
+      <Drawer.Screen name="JobTitle" component={JobTitleScreen} />
+      <Drawer.Screen name="JobTitleDropDown" component={JobTitleDropDown} />
+      <Drawer.Screen name="FinalStep" component={FinalStepScreen} />
+      {/* <Drawer.Screen name="NewsUpdate" component={NewsModal} /> */}
+      {/* <Drawer.Screen name="NewsUpdateScreen" component={NewsUpdateScreen} /> */}
+      <Drawer.Screen name="BottomSheetModal" component={BottomSheetModal} />
+      <Drawer.Screen name="ReportModal" component={ReportModal} />
+      <Drawer.Screen name="JobCard" component={JobCard} />
+      <Drawer.Screen name="FilterModal" component={FilterModal} />
+      <Drawer.Screen name="Company" component={Company} />
+      <Drawer.Screen name="CompanyFilterModal" component={CompanyFilterModal} />
+      <Drawer.Screen name="CompanyScreen" component={CompanyScreen} />
     </Drawer.Navigator>
   );
 }

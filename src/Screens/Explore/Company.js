@@ -223,18 +223,18 @@ export default function ExploreScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff', padding: 16, paddingTop: 90 },
+  container: { flex: 1, backgroundColor: '#fff', padding: 16, paddingTop: 40 },
 
   tabRow: {
     flexDirection: 'row',
     backgroundColor: '#F3F4F6',
     borderRadius: 30,
-    padding: 4,
-    marginBottom: 35,
+    padding: 0,
+    marginBottom: 25,
   },
   tab: {
     flex: 1,
-    paddingVertical: 15,
+    paddingVertical: 10,
     borderRadius: 30,
     alignItems: 'center',
   },
@@ -351,11 +351,11 @@ const styles = StyleSheet.create({
   bottomNav: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 30,
+    paddingVertical: 5,
     borderTopWidth: 1,
     borderTopColor: '#eee',
     backgroundColor: '#fff',
   },
   navItem: { alignItems: 'center' },
-  navText: { fontSize: 12, color: '#777', marginTop: 2, marginBottom: 25 },
+  navText: { fontSize: 12, color: '#777', marginTop: 2, marginBottom: 1 },
 });

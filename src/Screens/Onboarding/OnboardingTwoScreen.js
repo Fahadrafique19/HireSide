@@ -125,9 +125,9 @@ const styles = StyleSheet.create({
     justifyContent: '',
     alignItems: '',
     padding: 20,
-    paddingTop:100,
+    paddingTop: 70,
   },
-  image: { width: '100%', height: 450, marginTop: 40 },
+  image: { width: '100%', height: 300, marginTop: 40 },
   title: {
     fontSize: 35,
     fontWeight: '700',
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
   },
   skipBtn: {
     position: 'absolute',
-    top: 50,
+    top: 20,
     right: 20,
     zIndex: 1,
   },

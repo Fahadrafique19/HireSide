@@ -132,39 +132,45 @@ export default function HomeScreen({ navigation }) {
         </View>
       </ScrollView>
 
-       <View style={styles.bottomNav}>
-              <TouchableOpacity
-                style={styles.navItem}
-                onPress={() => navigation.navigate('Home')}
-              >
-                <Ionicons name="home" size={22} color="#0C64AE" />
-                <Text style={[styles.navText, { color: '#0C64AE' }]}>Home</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.navItem}>
-                <Ionicons name="search" size={22} color="#777" />
-                <Text style={styles.navText}>Search</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.navItem}
-                onPress={() => navigation.navigate('Explore')}
-              >
-                <Ionicons name="compass" size={22} color="#777" />
-                <Text style={[styles.navText, { color: '#777' }]}>Explore</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.navItem}>
-                <Ionicons name="notifications" size={22} color="#777" />
-                <Text style={styles.navText}>Notifications</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.navItem} onPress={() => navigation.openDrawer()}>
-                <Ionicons name="person" size={22} color="#777" />
-                <Text style={styles.navText}>Profile</Text>
-              </TouchableOpacity>
-      
-               <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Location')}>
-                <Ionicons name="location-sharp" size={22} color="#777" />
-                <Text style={styles.navText}>location</Text>
-              </TouchableOpacity>
-            </View>
+      <View style={styles.bottomNav}>
+        <TouchableOpacity
+          style={styles.navItem}
+          onPress={() => navigation.navigate('Home')}
+        >
+          <Ionicons name="home" size={22} color="#0C64AE" />
+          <Text style={[styles.navText, { color: '#0C64AE' }]}>Home</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navItem}>
+          <Ionicons name="search" size={22} color="#777" />
+          <Text style={styles.navText}>Search</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.navItem}
+          onPress={() => navigation.navigate('Explore')}
+        >
+          <Ionicons name="compass" size={22} color="#777" />
+          <Text style={[styles.navText, { color: '#777' }]}>Explore</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navItem}>
+          <Ionicons name="notifications" size={22} color="#777" />
+          <Text style={styles.navText}>Notifications</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.navItem}
+          onPress={() => navigation.openDrawer()}
+        >
+          <Ionicons name="person" size={22} color="#777" />
+          <Text style={styles.navText}>Profile</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.navItem}
+          onPress={() => navigation.navigate('Location')}
+        >
+          <Ionicons name="location-sharp" size={22} color="#777" />
+          <Text style={styles.navText}>location</Text>
+        </TouchableOpacity>
+      </View>
 
       <NewsModal
         visible={showNewsModal}
@@ -181,7 +187,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
-    marginTop: 40,
+    marginTop: 10,
   },
   top: { backgroundColor: '#E8F0F7', marginTop: 0 },
   avatar: { width: 50, height: 50, borderRadius: 22.5 },
@@ -325,11 +331,11 @@ const styles = StyleSheet.create({
   bottomNav: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 30,
+    paddingVertical: 5,
     borderTopWidth: 1,
     borderTopColor: '#eee',
     backgroundColor: '#fff',
   },
   navItem: { alignItems: 'center' },
-  navText: { fontSize: 12, color: '#777', marginTop: 2, marginBottom: 25 },
+  navText: { fontSize: 12, color: '#777', marginTop: 2, marginBottom: 15 },
 });

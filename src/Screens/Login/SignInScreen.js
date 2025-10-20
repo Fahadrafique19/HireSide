@@ -101,7 +101,7 @@ export default function SignInScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, paddingTop: 150, backgroundColor: '#fff' },
+  container: { flex: 1, padding: 20, paddingTop: 100, backgroundColor: '#fff' },
   title: { fontSize: 50, fontWeight: 'bold', marginBottom: 8 },
   subtitle: { fontSize: 20, color: '#777', marginBottom: 60 },
   input: {

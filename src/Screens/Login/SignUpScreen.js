@@ -122,7 +122,7 @@ export default function SignUpScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, paddingTop: 150, backgroundColor: '#fff' },
+  container: { flex: 1, padding: 20, paddingTop: 50, backgroundColor: '#fff' },
   title: { fontSize: 40, fontWeight: 'bold', marginBottom: 8 },
   subtitle: { fontSize: 18, color: '#777', marginBottom: 50 },
 

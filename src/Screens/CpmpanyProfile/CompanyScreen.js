@@ -15,7 +15,6 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import RatingCircle from '../../Components/RatingCircle';
 
-
 import { LineChart } from 'react-native-chart-kit';
 
 import Fontisto from 'react-native-vector-icons/Fontisto';
@@ -755,7 +754,7 @@ export default function CompanyScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#ffffff', marginTop: 50 },
+  container: { flex: 1, backgroundColor: '#ffffff', marginTop: 0 },
   cover: { width: '100%', height: 120, justifyContent: 'flex-start' },
   backButton: {
     marginLeft: 12,
@@ -962,12 +961,11 @@ const styles = StyleSheet.create({
 
   reviewCount: { color: '#5C677D', fontSize: 13, marginTop: 5 },
 
-
   circle: {
-  justifyContent: 'center',
-  alignItems: 'center',
-  marginRight: 10,
-},
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 10,
+  },
 
   circleRating: {
     width: 48,

@@ -36,7 +36,7 @@ export default function NearbyJobsScreen() {
       city: 'Karachi, Sindh',
       time: '2 months ago',
       logo: require('../../assets/images/Figma.png'),
-      coordinates: { latitude: 24.851, longitude: 67.000 },
+      coordinates: { latitude: 24.851, longitude: 67.0 },
     },
     {
       id: 2,
@@ -96,15 +96,14 @@ export default function NearbyJobsScreen() {
 
   return (
     <View style={styles.container}>
-    
       <MapView
-      provider=''
+        provider=""
         style={styles.map}
         initialRegion={region}
         showsUserLocation={true}
         showsMyLocationButton={false}
       >
-        {jobs.map((job) => (
+        {jobs.map(job => (
           <Marker
             key={job.id}
             coordinate={job.coordinates}
@@ -119,13 +118,11 @@ export default function NearbyJobsScreen() {
         ))}
       </MapView>
 
-      
       <View style={styles.searchBox}>
         <TextInput placeholder="Karachi" style={styles.input} />
         <Ionicons name="location-outline" size={18} color="#5C677D" />
       </View>
 
-     
       <View style={styles.carouselContainer}>
         <Carousel
           loop
