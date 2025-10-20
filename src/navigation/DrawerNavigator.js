@@ -1,4 +1,4 @@
-// src/navigation/DrawerNavigator.js
+
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from '../Screens/Home/HomeScreen';
